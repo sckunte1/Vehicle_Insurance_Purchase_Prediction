@@ -84,7 +84,7 @@
       * Setup the .github\workflows dir and aws.yaml file within
       * Go to AWS console and create a new IAM user exactly the way we did earlier (name: "usvisa-user") >>
         Go inside user >> Security Credentials >> Access Keys >> create access key >> CLI >> check agreement
-        >> next >> create access key >> download csv
+        >> next >> create access key >> download csv  -----> Ignore this step if IAM user already created. 
       * Now create one ECR repo to store/save docker image:
         AWS console >> Go to ECR >> Region: us-east-1 >> Hit create repository >>
         repo name: vehicleproj >> hit create repository >> copy and keep uri
@@ -118,7 +118,7 @@
       AWS_SECRET_ACCESS_KEY
       AWS_DEFAULT_REGION
       ECR_REPO
-
+      Here if you want to also train the model then you need to add MONGODB_URL in the repo secret. But ususally while deploying this step is avoided.
 31. CI-CD pipeline will be triggered at next commit and push.
 32. Now we need to activate the 5000 port of our EC2 instance:
       * Go to the instance > Security > Go to Security Groups > Edit inbound rules > add rule
